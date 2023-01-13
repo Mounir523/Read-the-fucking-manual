@@ -19,7 +19,7 @@ def get_user_name_from_input():
    """ Not empty string. No spaces. """
    username = input('Create your user name: ')
    
-   if (username == '' or ' ' in username):
+   if (not username or ' ' in username):
        print('Username is not valid.')
    else:
        return username

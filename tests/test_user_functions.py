@@ -15,10 +15,10 @@ def test_email_with_user_input_no_dot(monkeypatch):
 def test_email_with_user_input_correct(monkeypatch):
     monkeypatch.setattr('sys.stdin', io.StringIO('petra@adaltas.com'))
     assert get_email_from_input() == 'petra@adaltas.com'
-    
-# def test_user_name_with_user_input_no_empty_string(monkeypatch):
-    # monkeypatch.setattr('sys.stdin', io.StringIO(''))
-    # assert get_user_name_from_input() is None
+
+def test_user_name_with_user_input_no_empty_string(monkeypatch):
+    monkeypatch.setattr('sys.stdin', io.StringIO('\n\r'))
+    assert get_user_name_from_input() is None
     
 def test_user_name_with_user_input_no_spaces(monkeypatch):
     monkeypatch.setattr('sys.stdin', io.StringIO('petra kaferle'))
